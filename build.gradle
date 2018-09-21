@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'com.github.johnrengelman.shadow' version '2.0.4'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+//local file
+     compile files('lib/txr-java.jar')
+// others local or remote file
+    compile 'org.apache.commons:commons-lang3:3.4'
+    testCompile 'junit:junit:4.12'
+}
+
+jar {
+   manifest {
+        attributes 'Main-Class': 'Main'
+       attributes 'Class-Path': '/txr-java.jar'
+   }
+}

@@ -1,0 +1,22 @@
+@(skip)
+Order  : @order
+YourRef: @yourref
+@(skip)
+@count UK Items
+@(assert)
+@(collect :maxgap 0)
+
+Line @number
+ISBN       : @isbn
+Title      : @title
+@(cases)
+Qty        : @quantity
+@(or)
+@title2
+Qty        : @quantity
+@(end)
+Item Price : £@itemprice
+Total Price: £@totalprice
+@(end)
+
+Order Value: £@ordervalue
